@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище DB_Part_OS2Model" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Хранилище DB_Part_OS2ModelContainer">
+          <EntitySet Name="tbl_Kust_List" EntityType="Хранилище DB_Part_OS2Model.tbl_Kust_List" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbl_Modul_Name" EntityType="Хранилище DB_Part_OS2Model.tbl_Modul_Name" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbl_Movement_Details" EntityType="Хранилище DB_Part_OS2Model.tbl_Movement_Details" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbl_Movement_List" EntityType="Хранилище DB_Part_OS2Model.tbl_Movement_List" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbl_ORM" EntityType="Хранилище DB_Part_OS2Model.tbl_ORM" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbl_ORM_List" EntityType="Хранилище DB_Part_OS2Model.tbl_ORM_List" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="tbl_Kust_List">
+          <Key>
+            <PropertyRef Name="ID_Kust" />
+          </Key>
+          <Property Name="ID_Kust" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Full_Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Modul_Name">
+          <Key>
+            <PropertyRef Name="ID_Modul_Name" />
+          </Key>
+          <Property Name="ID_Modul_Name" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="nvarchar(max)" />
+          <Property Name="Full_Name" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="real" />
+          <Property Name="Catalog_Number" Type="nvarchar(max)" />
+          <Property Name="Ed_Izmer" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_Details">
+          <Key>
+            <PropertyRef Name="ID_Mov_Det" />
+          </Key>
+          <Property Name="ID_Mov_Det" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code_Movement_List" Type="int" Nullable="false" />
+          <Property Name="Modul_Movement" Type="nvarchar(max)" />
+          <Property Name="Modul_count" Type="int" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_List">
+          <Key>
+            <PropertyRef Name="ID_Movement" />
+          </Key>
+          <Property Name="ID_Movement" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Driver" Type="nvarchar(max)" />
+          <Property Name="Driver_Movement_List_ID" Type="nvarchar(max)" />
+          <Property Name="Sender" Type="nvarchar(max)" />
+          <Property Name="Kust_Name" Type="nvarchar(max)" />
+          <Property Name="Kust_Number" Type="nvarchar(max)" />
+          <Property Name="Well_Number" Type="nvarchar(max)" />
+          <Property Name="ITS_PartNumber_ORM" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl_ORM">
+          <Key>
+            <PropertyRef Name="ID_ORM" />
+          </Key>
+          <Property Name="ID_ORM" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Full_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Code_ORM" Type="int" Nullable="false" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="Priority" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_ORM_List">
+          <Key>
+            <PropertyRef Name="ID_ORM" />
+          </Key>
+          <Property Name="ID_ORM" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Full_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_Part_OS2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="DB_Part_OS2Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Kust_List" EntityType="DB_Part_OS2Model.tbl_Kust_List" />
+          <EntitySet Name="tbl_Modul_Name" EntityType="DB_Part_OS2Model.tbl_Modul_Name" />
+          <EntitySet Name="tbl_ORM" EntityType="DB_Part_OS2Model.tbl_ORM" />
+          <EntitySet Name="tbl_ORM_List" EntityType="DB_Part_OS2Model.tbl_ORM_List" />
+          <EntitySet Name="tbl_Movement_Details" EntityType="DB_Part_OS2Model.tbl_Movement_Details" />
+          <EntitySet Name="tbl_Movement_List" EntityType="DB_Part_OS2Model.tbl_Movement_List" />
+        </EntityContainer>
+        <EntityType Name="tbl_Kust_List">
+          <Key>
+            <PropertyRef Name="ID_Kust" />
+          </Key>
+          <Property Name="ID_Kust" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_Modul_Name">
+          <Key>
+            <PropertyRef Name="ID_Modul_Name" />
+          </Key>
+          <Property Name="ID_Modul_Name" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Full_Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Weight" Type="Single" />
+          <Property Type="String" Name="Catalog_Number" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ed_Izmer" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_ORM">
+          <Key>
+            <PropertyRef Name="ID_ORM" />
+          </Key>
+          <Property Name="ID_ORM" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Code_ORM" Type="Int32" Nullable="false" />
+          <Property Type="String" Name="Position" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Priority" />
+        </EntityType>
+        <EntityType Name="tbl_ORM_List">
+          <Key>
+            <PropertyRef Name="ID_ORM" />
+          </Key>
+          <Property Name="ID_ORM" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Phone" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_Details">
+          <Key>
+            <PropertyRef Name="ID_Mov_Det" />
+          </Key>
+          <Property Type="Int32" Name="ID_Mov_Det" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Code_Movement_List" Nullable="false" />
+          <Property Type="String" Name="Modul_Movement" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Modul_count" />
+          <Property Type="String" Name="Weight" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_List">
+          <Key>
+            <PropertyRef Name="ID_Movement" />
+          </Key>
+          <Property Type="Int32" Name="ID_Movement" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Date" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Driver" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Driver_Movement_List_ID" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sender" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Kust_Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Kust_Number" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Well_Number" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ITS_PartNumber_ORM" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DB_Part_OS2ModelContainer" CdmEntityContainer="DB_Part_OS2Entities">
+          <EntitySetMapping Name="tbl_Kust_List">
+            <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Kust_List">
+              <MappingFragment StoreEntitySet="tbl_Kust_List">
+                <ScalarProperty Name="ID_Kust" ColumnName="ID_Kust" />
+                <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Modul_Name">
+            <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Modul_Name">
+              <MappingFragment StoreEntitySet="tbl_Modul_Name">
+                <ScalarProperty Name="Ed_Izmer" ColumnName="Ed_Izmer" />
+                <ScalarProperty Name="Catalog_Number" ColumnName="Catalog_Number" />
+                <ScalarProperty Name="ID_Modul_Name" ColumnName="ID_Modul_Name" />
+                <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ORM">
+            <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_ORM">
+              <MappingFragment StoreEntitySet="tbl_ORM">
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="ID_ORM" ColumnName="ID_ORM" />
+                <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+                <ScalarProperty Name="Code_ORM" ColumnName="Code_ORM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ORM_List">
+            <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_ORM_List">
+              <MappingFragment StoreEntitySet="tbl_ORM_List">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ID_ORM" ColumnName="ID_ORM" />
+                <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Movement_Details">
+            <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Movement_Details">
+              <MappingFragment StoreEntitySet="tbl_Movement_Details">
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Modul_count" ColumnName="Modul_count" />
+                <ScalarProperty Name="Modul_Movement" ColumnName="Modul_Movement" />
+                <ScalarProperty Name="Code_Movement_List" ColumnName="Code_Movement_List" />
+                <ScalarProperty Name="ID_Mov_Det" ColumnName="ID_Mov_Det" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Movement_List">
+            <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Movement_List">
+              <MappingFragment StoreEntitySet="tbl_Movement_List">
+                <ScalarProperty Name="ITS_PartNumber_ORM" ColumnName="ITS_PartNumber_ORM" />
+                <ScalarProperty Name="Well_Number" ColumnName="Well_Number" />
+                <ScalarProperty Name="Kust_Number" ColumnName="Kust_Number" />
+                <ScalarProperty Name="Kust_Name" ColumnName="Kust_Name" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="Driver_Movement_List_ID" ColumnName="Driver_Movement_List_ID" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID_Movement" ColumnName="ID_Movement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

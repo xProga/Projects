@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_Part_OS2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="DB_Part_OS2Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Kust_List" EntityType="DB_Part_OS2Model.tbl_Kust_List" />
+    <EntitySet Name="tbl_Modul_Name" EntityType="DB_Part_OS2Model.tbl_Modul_Name" />
+    <EntitySet Name="tbl_ORM" EntityType="DB_Part_OS2Model.tbl_ORM" />
+    <EntitySet Name="tbl_ORM_List" EntityType="DB_Part_OS2Model.tbl_ORM_List" />
+    <EntitySet Name="tbl_Movement_Details" EntityType="DB_Part_OS2Model.tbl_Movement_Details" />
+    <EntitySet Name="tbl_Movement_List" EntityType="DB_Part_OS2Model.tbl_Movement_List" />
+  </EntityContainer>
+  <EntityType Name="tbl_Kust_List">
+    <Key>
+      <PropertyRef Name="ID_Kust" />
+    </Key>
+    <Property Name="ID_Kust" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Modul_Name">
+    <Key>
+      <PropertyRef Name="ID_Modul_Name" />
+    </Key>
+    <Property Name="ID_Modul_Name" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Full_Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Weight" Type="Single" />
+    <Property Type="String" Name="Catalog_Number" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ed_Izmer" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_ORM">
+    <Key>
+      <PropertyRef Name="ID_ORM" />
+    </Key>
+    <Property Name="ID_ORM" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Code_ORM" Type="Int32" Nullable="false" />
+    <Property Type="String" Name="Position" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Priority" />
+  </EntityType>
+  <EntityType Name="tbl_ORM_List">
+    <Key>
+      <PropertyRef Name="ID_ORM" />
+    </Key>
+    <Property Name="ID_ORM" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Phone" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_Details">
+    <Key>
+      <PropertyRef Name="ID_Mov_Det" />
+    </Key>
+    <Property Type="Int32" Name="ID_Mov_Det" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="Code_Movement_List" Nullable="false" />
+    <Property Type="String" Name="Modul_Movement" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Modul_count" />
+    <Property Type="String" Name="Weight" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_List">
+    <Key>
+      <PropertyRef Name="ID_Movement" />
+    </Key>
+    <Property Type="Int32" Name="ID_Movement" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Date" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Driver" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Driver_Movement_List_ID" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sender" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Kust_Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Kust_Number" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Well_Number" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ITS_PartNumber_ORM" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DB_Part_OS2ModelContainer" CdmEntityContainer="DB_Part_OS2Entities">
+    <EntitySetMapping Name="tbl_Kust_List">
+      <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Kust_List">
+        <MappingFragment StoreEntitySet="tbl_Kust_List">
+          <ScalarProperty Name="ID_Kust" ColumnName="ID_Kust" />
+          <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Modul_Name">
+      <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Modul_Name">
+        <MappingFragment StoreEntitySet="tbl_Modul_Name">
+          <ScalarProperty Name="Ed_Izmer" ColumnName="Ed_Izmer" />
+          <ScalarProperty Name="Catalog_Number" ColumnName="Catalog_Number" />
+          <ScalarProperty Name="ID_Modul_Name" ColumnName="ID_Modul_Name" />
+          <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ORM">
+      <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_ORM">
+        <MappingFragment StoreEntitySet="tbl_ORM">
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="ID_ORM" ColumnName="ID_ORM" />
+          <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Code_ORM" ColumnName="Code_ORM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ORM_List">
+      <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_ORM_List">
+        <MappingFragment StoreEntitySet="tbl_ORM_List">
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ID_ORM" ColumnName="ID_ORM" />
+          <ScalarProperty Name="Short_Name" ColumnName="Short_Name" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Movement_Details">
+      <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Movement_Details">
+        <MappingFragment StoreEntitySet="tbl_Movement_Details">
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Modul_count" ColumnName="Modul_count" />
+          <ScalarProperty Name="Modul_Movement" ColumnName="Modul_Movement" />
+          <ScalarProperty Name="Code_Movement_List" ColumnName="Code_Movement_List" />
+          <ScalarProperty Name="ID_Mov_Det" ColumnName="ID_Mov_Det" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Movement_List">
+      <EntityTypeMapping TypeName="DB_Part_OS2Model.tbl_Movement_List">
+        <MappingFragment StoreEntitySet="tbl_Movement_List">
+          <ScalarProperty Name="ITS_PartNumber_ORM" ColumnName="ITS_PartNumber_ORM" />
+          <ScalarProperty Name="Well_Number" ColumnName="Well_Number" />
+          <ScalarProperty Name="Kust_Number" ColumnName="Kust_Number" />
+          <ScalarProperty Name="Kust_Name" ColumnName="Kust_Name" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="Driver_Movement_List_ID" ColumnName="Driver_Movement_List_ID" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ID_Movement" ColumnName="ID_Movement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

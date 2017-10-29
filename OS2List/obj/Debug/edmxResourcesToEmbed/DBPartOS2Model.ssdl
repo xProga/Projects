@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DB_Part_OS2Model" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Хранилище DB_Part_OS2ModelContainer">
+    <EntitySet Name="tbl_Kust_List" EntityType="Хранилище DB_Part_OS2Model.tbl_Kust_List" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tbl_Modul_Name" EntityType="Хранилище DB_Part_OS2Model.tbl_Modul_Name" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tbl_Movement_Details" EntityType="Хранилище DB_Part_OS2Model.tbl_Movement_Details" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tbl_Movement_List" EntityType="Хранилище DB_Part_OS2Model.tbl_Movement_List" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tbl_ORM" EntityType="Хранилище DB_Part_OS2Model.tbl_ORM" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tbl_ORM_List" EntityType="Хранилище DB_Part_OS2Model.tbl_ORM_List" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="tbl_Kust_List">
+    <Key>
+      <PropertyRef Name="ID_Kust" />
+    </Key>
+    <Property Name="ID_Kust" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Full_Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Modul_Name">
+    <Key>
+      <PropertyRef Name="ID_Modul_Name" />
+    </Key>
+    <Property Name="ID_Modul_Name" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="nvarchar(max)" />
+    <Property Name="Full_Name" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="real" />
+    <Property Name="Catalog_Number" Type="nvarchar(max)" />
+    <Property Name="Ed_Izmer" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_Details">
+    <Key>
+      <PropertyRef Name="ID_Mov_Det" />
+    </Key>
+    <Property Name="ID_Mov_Det" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code_Movement_List" Type="int" Nullable="false" />
+    <Property Name="Modul_Movement" Type="nvarchar(max)" />
+    <Property Name="Modul_count" Type="int" />
+    <Property Name="Weight" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_List">
+    <Key>
+      <PropertyRef Name="ID_Movement" />
+    </Key>
+    <Property Name="ID_Movement" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Driver" Type="nvarchar(max)" />
+    <Property Name="Driver_Movement_List_ID" Type="nvarchar(max)" />
+    <Property Name="Sender" Type="nvarchar(max)" />
+    <Property Name="Kust_Name" Type="nvarchar(max)" />
+    <Property Name="Kust_Number" Type="nvarchar(max)" />
+    <Property Name="Well_Number" Type="nvarchar(max)" />
+    <Property Name="ITS_PartNumber_ORM" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_ORM">
+    <Key>
+      <PropertyRef Name="ID_ORM" />
+    </Key>
+    <Property Name="ID_ORM" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Full_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code_ORM" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="Priority" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_ORM_List">
+    <Key>
+      <PropertyRef Name="ID_ORM" />
+    </Key>
+    <Property Name="ID_ORM" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Full_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+  </EntityType>
+</Schema>

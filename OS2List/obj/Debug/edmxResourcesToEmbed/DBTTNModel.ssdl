@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DBTTNModel" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Хранилище DBTTNModelContainer">
+    <EntitySet Name="tbl_Current_Movement" EntityType="Хранилище DBTTNModel.tbl_Current_Movement" store:Type="Tables" />
+    <EntitySet Name="tbl_Kadrovii_Sostav" EntityType="Хранилище DBTTNModel.tbl_Kadrovii_Sostav" store:Type="Tables" />
+    <EntitySet Name="tbl_Kadrovii_Sostav_par" EntityType="Хранилище DBTTNModel.tbl_Kadrovii_Sostav_par" store:Type="Tables" />
+    <EntitySet Name="tbl_Mestorojdenie" EntityType="Хранилище DBTTNModel.tbl_Mestorojdenie" store:Type="Tables" />
+    <EntitySet Name="tbl_Modul_Name" EntityType="Хранилище DBTTNModel.tbl_Modul_Name" store:Type="Tables" />
+    <EntitySet Name="tbl_Movement_History" EntityType="Хранилище DBTTNModel.tbl_Movement_History" store:Type="Tables" />
+    <EntitySet Name="tbl_Movement_History_Details" EntityType="Хранилище DBTTNModel.tbl_Movement_History_Details" store:Type="Tables" />
+    <EntitySet Name="tbl_ORM" EntityType="Хранилище DBTTNModel.tbl_ORM" store:Type="Tables" />
+    <EntitySet Name="tbl_Spiski" EntityType="Хранилище DBTTNModel.tbl_Spiski" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="tbl_Current_Movement">
+    <Key>
+      <PropertyRef Name="ID_Movement" />
+    </Key>
+    <Property Name="ID_Movement" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Modul_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Zavod_Number" Type="nvarchar" MaxLength="255" />
+    <Property Name="Count" Type="int" />
+    <Property Name="Package" Type="nvarchar" MaxLength="100" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="Way_To_Get_Weight" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ed_Izmer" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Kadrovii_Sostav">
+    <Key>
+      <PropertyRef Name="ID_KS" />
+    </Key>
+    <Property Name="Tab_N_KS" Type="nvarchar" MaxLength="100" />
+    <Property Name="Familiya_KS" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imya_KS" Type="nvarchar" MaxLength="100" />
+    <Property Name="Otchestvo_KS" Type="nvarchar" MaxLength="100" />
+    <Property Name="Dolgnost_KS" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID_KS" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_ORM_KS" Type="int" />
+    <Property Name="Comment_KS" Type="nvarchar" MaxLength="200" />
+    <Property Name="Priority_Doljnost_KS" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Kadrovii_Sostav_par">
+    <Key>
+      <PropertyRef Name="ID_KS_Par" />
+    </Key>
+    <Property Name="ID_KS_Par" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_KS_Par" Type="int" />
+    <Property Name="Parametr_Name_KS_Par" Type="nvarchar" MaxLength="200" />
+    <Property Name="Parametr_Text_KS_Par" Type="nvarchar" MaxLength="200" />
+    <Property Name="Parametr_Comment_KS_Par" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tbl_Mestorojdenie">
+    <Key>
+      <PropertyRef Name="ID_Mestorij" />
+    </Key>
+    <Property Name="ID_Mestorij" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Mestorojdenie" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tbl_Modul_Name">
+    <Key>
+      <PropertyRef Name="ID_Modul_Name" />
+    </Key>
+    <Property Name="ID_Modul_Name" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name_Modul_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Full_Name_Modul_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Catalog_Nomer_Modul_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Class_Modul_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Comment_Modul_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Weight_Modul_Name" Type="int" />
+    <Property Name="Way_To_Find_Weight" Type="nvarchar" MaxLength="100" />
+    <Property Name="Image_Path" Type="image" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_History">
+    <Key>
+      <PropertyRef Name="ID_History" />
+    </Key>
+    <Property Name="ID_History" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Movement_History_Number" Type="int" />
+    <Property Name="Kod_Sender_ORM" Type="int" />
+    <Property Name="Kod_Sender_Kadr_Sost" Type="int" />
+    <Property Name="Kod_Sender_Permision_Kadr_Sost" Type="int" />
+    <Property Name="Kod_Recever_ORM" Type="int" />
+    <Property Name="Kod_Recever_Request_Kadr_Sost" Type="int" />
+    <Property Name="Kod_Driver_Kadr_Sost" Type="int" />
+    <Property Name="Kod_Driver_Movement_List" Type="bigint" />
+    <Property Name="Data_Movement_History" Type="datetime" />
+    <Property Name="Movement_History_Details" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_History_Details">
+    <Key>
+      <PropertyRef Name="ID_Movement_History_Details" />
+    </Key>
+    <Property Name="ID_Movement_History_Details" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_Movement_History" Type="int" />
+    <Property Name="Kod_Modul_Name" Type="int" />
+    <Property Name="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" Type="nvarchar" MaxLength="255" />
+    <Property Name="Count_Modul" Type="int" />
+    <Property Name="Weight_Modul" Type="real" />
+    <Property Name="Kod_Way_To_Get_Weight" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kod_Package" Type="int" />
+    <Property Name="Kod_Ed_Izmer" Type="int" />
+    <Property Name="Zavod_Invent_Number" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tbl_ORM">
+    <Key>
+      <PropertyRef Name="ID_ORM" />
+    </Key>
+    <Property Name="Short_Name_ORM" Type="nvarchar" MaxLength="100" />
+    <Property Name="Full_Name_ORM" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID_ORM" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_Zech_ORM" Type="int" />
+    <Property Name="Phone_ORM" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Spiski">
+    <Key>
+      <PropertyRef Name="ID_Spiski" />
+    </Key>
+    <Property Name="ID_Spiski" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Spiski" Type="nvarchar" MaxLength="255" />
+    <Property Name="Value_Spiski" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+</Schema>

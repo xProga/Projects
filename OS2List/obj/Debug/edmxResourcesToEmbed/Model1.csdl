@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBTTNModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="DBTTNEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Current_Movement" EntityType="DBTTNModel1.tbl_Current_Movement" />
+    <EntitySet Name="tbl_Kadrovii_Sostav" EntityType="DBTTNModel1.tbl_Kadrovii_Sostav" />
+    <EntitySet Name="tbl_Kadrovii_Sostav_par" EntityType="DBTTNModel1.tbl_Kadrovii_Sostav_par" />
+    <EntitySet Name="tbl_Mestorojdenie" EntityType="DBTTNModel1.tbl_Mestorojdenie" />
+    <EntitySet Name="tbl_Modul_Name" EntityType="DBTTNModel1.tbl_Modul_Name" />
+    <EntitySet Name="tbl_Movement_History" EntityType="DBTTNModel1.tbl_Movement_History" />
+    <EntitySet Name="tbl_Movement_History_Details" EntityType="DBTTNModel1.tbl_Movement_History_Details" />
+    <EntitySet Name="tbl_ORM" EntityType="DBTTNModel1.tbl_ORM" />
+    <EntitySet Name="tbl_Spiski" EntityType="DBTTNModel1.tbl_Spiski" />
+  </EntityContainer>
+  <EntityType Name="tbl_Current_Movement">
+    <Key>
+      <PropertyRef Name="ID_Movement" />
+    </Key>
+    <Property Name="ID_Movement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modul_Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Zavod_Number" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Count" Type="Int32" />
+    <Property Name="Package" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Weight" Type="Double" />
+    <Property Name="Way_To_Get_Weight" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Ed_Izmer" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Kadrovii_Sostav">
+    <Key>
+      <PropertyRef Name="ID_KS" />
+    </Key>
+    <Property Name="Tab_N_KS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Familiya_KS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Imya_KS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Otchestvo_KS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Dolgnost_KS" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="ID_KS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_ORM_KS" Type="Int32" />
+    <Property Name="Comment_KS" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Priority_Doljnost_KS" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Kadrovii_Sostav_par">
+    <Key>
+      <PropertyRef Name="ID_KS_Par" />
+    </Key>
+    <Property Name="ID_KS_Par" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_KS_Par" Type="Int32" />
+    <Property Name="Parametr_Name_KS_Par" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Parametr_Text_KS_Par" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Parametr_Comment_KS_Par" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Mestorojdenie">
+    <Key>
+      <PropertyRef Name="ID_Mestorij" />
+    </Key>
+    <Property Name="ID_Mestorij" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Mestorojdenie" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Modul_Name">
+    <Key>
+      <PropertyRef Name="ID_Modul_Name" />
+    </Key>
+    <Property Name="ID_Modul_Name" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Short_Name_Modul_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Full_Name_Modul_Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Catalog_Nomer_Modul_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Class_Modul_Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Comment_Modul_Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Weight_Modul_Name" Type="Int32" />
+    <Property Name="Way_To_Find_Weight" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Image_Path" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_History">
+    <Key>
+      <PropertyRef Name="ID_History" />
+    </Key>
+    <Property Name="ID_History" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Movement_History_Number" Type="Int32" />
+    <Property Name="Kod_Sender_ORM" Type="Int32" />
+    <Property Name="Kod_Sender_Kadr_Sost" Type="Int32" />
+    <Property Name="Kod_Sender_Permision_Kadr_Sost" Type="Int32" />
+    <Property Name="Kod_Recever_ORM" Type="Int32" />
+    <Property Name="Kod_Recever_Request_Kadr_Sost" Type="Int32" />
+    <Property Name="Kod_Driver_Kadr_Sost" Type="Int32" />
+    <Property Name="Kod_Driver_Movement_List" Type="Int64" />
+    <Property Name="Data_Movement_History" Type="DateTime" Precision="3" />
+    <Property Name="Movement_History_Details" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Movement_History_Details">
+    <Key>
+      <PropertyRef Name="ID_Movement_History_Details" />
+    </Key>
+    <Property Name="ID_Movement_History_Details" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_Movement_History" Type="Int32" />
+    <Property Name="Kod_Modul_Name" Type="Int32" />
+    <Property Name="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Count_Modul" Type="Int32" />
+    <Property Name="Weight_Modul" Type="Single" />
+    <Property Name="Kod_Way_To_Get_Weight" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Kod_Package" Type="Int32" />
+    <Property Name="Kod_Ed_Izmer" Type="Int32" />
+    <Property Name="Zavod_Invent_Number" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_ORM">
+    <Key>
+      <PropertyRef Name="ID_ORM" />
+    </Key>
+    <Property Name="Short_Name_ORM" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Full_Name_ORM" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="ID_ORM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kod_Zech_ORM" Type="Int32" />
+    <Property Name="Phone_ORM" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Spiski">
+    <Key>
+      <PropertyRef Name="ID_Spiski" />
+    </Key>
+    <Property Name="ID_Spiski" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Spiski" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Value_Spiski" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

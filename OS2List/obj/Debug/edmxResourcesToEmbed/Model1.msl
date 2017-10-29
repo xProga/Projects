@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DBTTNModel1Container" CdmEntityContainer="DBTTNEntities1">
+    <EntitySetMapping Name="tbl_Current_Movement">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Current_Movement">
+        <MappingFragment StoreEntitySet="tbl_Current_Movement">
+          <ScalarProperty Name="ID_Movement" ColumnName="ID_Movement" />
+          <ScalarProperty Name="Modul_Name" ColumnName="Modul_Name" />
+          <ScalarProperty Name="Zavod_Number" ColumnName="Zavod_Number" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Package" ColumnName="Package" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Way_To_Get_Weight" ColumnName="Way_To_Get_Weight" />
+          <ScalarProperty Name="Ed_Izmer" ColumnName="Ed_Izmer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Kadrovii_Sostav">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Kadrovii_Sostav">
+        <MappingFragment StoreEntitySet="tbl_Kadrovii_Sostav">
+          <ScalarProperty Name="Tab_N_KS" ColumnName="Tab_N_KS" />
+          <ScalarProperty Name="Familiya_KS" ColumnName="Familiya_KS" />
+          <ScalarProperty Name="Imya_KS" ColumnName="Imya_KS" />
+          <ScalarProperty Name="Otchestvo_KS" ColumnName="Otchestvo_KS" />
+          <ScalarProperty Name="Dolgnost_KS" ColumnName="Dolgnost_KS" />
+          <ScalarProperty Name="ID_KS" ColumnName="ID_KS" />
+          <ScalarProperty Name="Kod_ORM_KS" ColumnName="Kod_ORM_KS" />
+          <ScalarProperty Name="Comment_KS" ColumnName="Comment_KS" />
+          <ScalarProperty Name="Priority_Doljnost_KS" ColumnName="Priority_Doljnost_KS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Kadrovii_Sostav_par">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Kadrovii_Sostav_par">
+        <MappingFragment StoreEntitySet="tbl_Kadrovii_Sostav_par">
+          <ScalarProperty Name="ID_KS_Par" ColumnName="ID_KS_Par" />
+          <ScalarProperty Name="Kod_KS_Par" ColumnName="Kod_KS_Par" />
+          <ScalarProperty Name="Parametr_Name_KS_Par" ColumnName="Parametr_Name_KS_Par" />
+          <ScalarProperty Name="Parametr_Text_KS_Par" ColumnName="Parametr_Text_KS_Par" />
+          <ScalarProperty Name="Parametr_Comment_KS_Par" ColumnName="Parametr_Comment_KS_Par" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Mestorojdenie">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Mestorojdenie">
+        <MappingFragment StoreEntitySet="tbl_Mestorojdenie">
+          <ScalarProperty Name="ID_Mestorij" ColumnName="ID_Mestorij" />
+          <ScalarProperty Name="Name_Mestorojdenie" ColumnName="Name_Mestorojdenie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Modul_Name">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Modul_Name">
+        <MappingFragment StoreEntitySet="tbl_Modul_Name">
+          <ScalarProperty Name="ID_Modul_Name" ColumnName="ID_Modul_Name" />
+          <ScalarProperty Name="Short_Name_Modul_Name" ColumnName="Short_Name_Modul_Name" />
+          <ScalarProperty Name="Full_Name_Modul_Name" ColumnName="Full_Name_Modul_Name" />
+          <ScalarProperty Name="Catalog_Nomer_Modul_Name" ColumnName="Catalog_Nomer_Modul_Name" />
+          <ScalarProperty Name="Class_Modul_Name" ColumnName="Class_Modul_Name" />
+          <ScalarProperty Name="Comment_Modul_Name" ColumnName="Comment_Modul_Name" />
+          <ScalarProperty Name="Weight_Modul_Name" ColumnName="Weight_Modul_Name" />
+          <ScalarProperty Name="Way_To_Find_Weight" ColumnName="Way_To_Find_Weight" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Movement_History">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Movement_History">
+        <MappingFragment StoreEntitySet="tbl_Movement_History">
+          <ScalarProperty Name="ID_History" ColumnName="ID_History" />
+          <ScalarProperty Name="Movement_History_Number" ColumnName="Movement_History_Number" />
+          <ScalarProperty Name="Kod_Sender_ORM" ColumnName="Kod_Sender_ORM" />
+          <ScalarProperty Name="Kod_Sender_Kadr_Sost" ColumnName="Kod_Sender_Kadr_Sost" />
+          <ScalarProperty Name="Kod_Sender_Permision_Kadr_Sost" ColumnName="Kod_Sender_Permision_Kadr_Sost" />
+          <ScalarProperty Name="Kod_Recever_ORM" ColumnName="Kod_Recever_ORM" />
+          <ScalarProperty Name="Kod_Recever_Request_Kadr_Sost" ColumnName="Kod_Recever_Request_Kadr_Sost" />
+          <ScalarProperty Name="Kod_Driver_Kadr_Sost" ColumnName="Kod_Driver_Kadr_Sost" />
+          <ScalarProperty Name="Kod_Driver_Movement_List" ColumnName="Kod_Driver_Movement_List" />
+          <ScalarProperty Name="Data_Movement_History" ColumnName="Data_Movement_History" />
+          <ScalarProperty Name="Movement_History_Details" ColumnName="Movement_History_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Movement_History_Details">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Movement_History_Details">
+        <MappingFragment StoreEntitySet="tbl_Movement_History_Details">
+          <ScalarProperty Name="ID_Movement_History_Details" ColumnName="ID_Movement_History_Details" />
+          <ScalarProperty Name="Kod_Movement_History" ColumnName="Kod_Movement_History" />
+          <ScalarProperty Name="Kod_Modul_Name" ColumnName="Kod_Modul_Name" />
+          <ScalarProperty Name="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" ColumnName="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" />
+          <ScalarProperty Name="Count_Modul" ColumnName="Count_Modul" />
+          <ScalarProperty Name="Weight_Modul" ColumnName="Weight_Modul" />
+          <ScalarProperty Name="Kod_Way_To_Get_Weight" ColumnName="Kod_Way_To_Get_Weight" />
+          <ScalarProperty Name="Kod_Package" ColumnName="Kod_Package" />
+          <ScalarProperty Name="Kod_Ed_Izmer" ColumnName="Kod_Ed_Izmer" />
+          <ScalarProperty Name="Zavod_Invent_Number" ColumnName="Zavod_Invent_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ORM">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_ORM">
+        <MappingFragment StoreEntitySet="tbl_ORM">
+          <ScalarProperty Name="Short_Name_ORM" ColumnName="Short_Name_ORM" />
+          <ScalarProperty Name="Full_Name_ORM" ColumnName="Full_Name_ORM" />
+          <ScalarProperty Name="ID_ORM" ColumnName="ID_ORM" />
+          <ScalarProperty Name="Kod_Zech_ORM" ColumnName="Kod_Zech_ORM" />
+          <ScalarProperty Name="Phone_ORM" ColumnName="Phone_ORM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Spiski">
+      <EntityTypeMapping TypeName="DBTTNModel1.tbl_Spiski">
+        <MappingFragment StoreEntitySet="tbl_Spiski">
+          <ScalarProperty Name="ID_Spiski" ColumnName="ID_Spiski" />
+          <ScalarProperty Name="Name_Spiski" ColumnName="Name_Spiski" />
+          <ScalarProperty Name="Value_Spiski" ColumnName="Value_Spiski" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

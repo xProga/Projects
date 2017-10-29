@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?><edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище DBTTNModel" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Хранилище DBTTNModelContainer">
+          <EntitySet Name="tbl_Current_Movement" EntityType="Хранилище DBTTNModel.tbl_Current_Movement" store:Type="Tables" />
+          <EntitySet Name="tbl_Kadrovii_Sostav" EntityType="Хранилище DBTTNModel.tbl_Kadrovii_Sostav" store:Type="Tables" />
+          <EntitySet Name="tbl_Kadrovii_Sostav_par" EntityType="Хранилище DBTTNModel.tbl_Kadrovii_Sostav_par" store:Type="Tables" />
+          <EntitySet Name="tbl_Mestorojdenie" EntityType="Хранилище DBTTNModel.tbl_Mestorojdenie" store:Type="Tables" />
+          <EntitySet Name="tbl_Modul_Name" EntityType="Хранилище DBTTNModel.tbl_Modul_Name" store:Type="Tables" />
+          <EntitySet Name="tbl_Movement_History" EntityType="Хранилище DBTTNModel.tbl_Movement_History" store:Type="Tables" />
+          <EntitySet Name="tbl_Movement_History_Details" EntityType="Хранилище DBTTNModel.tbl_Movement_History_Details" store:Type="Tables" />
+          <EntitySet Name="tbl_ORM" EntityType="Хранилище DBTTNModel.tbl_ORM" store:Type="Tables" />
+          <EntitySet Name="tbl_Spiski" EntityType="Хранилище DBTTNModel.tbl_Spiski" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="tbl_Current_Movement">
+          <Key>
+            <PropertyRef Name="ID_Movement" />
+          </Key>
+          <Property Name="ID_Movement" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Modul_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Zavod_Number" Type="nvarchar" MaxLength="255" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Package" Type="nvarchar" MaxLength="100" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="Way_To_Get_Weight" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ed_Izmer" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_Kadrovii_Sostav">
+          <Key>
+            <PropertyRef Name="ID_KS" />
+          </Key>
+          <Property Name="Tab_N_KS" Type="nvarchar" MaxLength="100" />
+          <Property Name="Familiya_KS" Type="nvarchar" MaxLength="100" />
+          <Property Name="Imya_KS" Type="nvarchar" MaxLength="100" />
+          <Property Name="Otchestvo_KS" Type="nvarchar" MaxLength="100" />
+          <Property Name="Dolgnost_KS" Type="nvarchar" MaxLength="200" />
+          <Property Name="ID_KS" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Kod_ORM_KS" Type="int" />
+          <Property Name="Comment_KS" Type="nvarchar" MaxLength="200" />
+          <Property Name="Priority_Doljnost_KS" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Kadrovii_Sostav_par">
+          <Key>
+            <PropertyRef Name="ID_KS_Par" />
+          </Key>
+          <Property Name="ID_KS_Par" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Kod_KS_Par" Type="int" />
+          <Property Name="Parametr_Name_KS_Par" Type="nvarchar" MaxLength="200" />
+          <Property Name="Parametr_Text_KS_Par" Type="nvarchar" MaxLength="200" />
+          <Property Name="Parametr_Comment_KS_Par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_Mestorojdenie">
+          <Key>
+            <PropertyRef Name="ID_Mestorij" />
+          </Key>
+          <Property Name="ID_Mestorij" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Mestorojdenie" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tbl_Modul_Name">
+          <Key>
+            <PropertyRef Name="ID_Modul_Name" />
+          </Key>
+          <Property Name="ID_Modul_Name" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Short_Name_Modul_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Full_Name_Modul_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Catalog_Nomer_Modul_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Class_Modul_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Comment_Modul_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Weight_Modul_Name" Type="int" />
+          <Property Name="Way_To_Find_Weight" Type="nvarchar" MaxLength="100" />
+          <Property Name="Image_Path" Type="image" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_History">
+          <Key>
+            <PropertyRef Name="ID_History" />
+          </Key>
+          <Property Name="ID_History" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Movement_History_Number" Type="int" />
+          <Property Name="Kod_Sender_ORM" Type="int" />
+          <Property Name="Kod_Sender_Kadr_Sost" Type="int" />
+          <Property Name="Kod_Sender_Permision_Kadr_Sost" Type="int" />
+          <Property Name="Kod_Recever_ORM" Type="int" />
+          <Property Name="Kod_Recever_Request_Kadr_Sost" Type="int" />
+          <Property Name="Kod_Driver_Kadr_Sost" Type="int" />
+          <Property Name="Kod_Driver_Movement_List" Type="bigint" />
+          <Property Name="Data_Movement_History" Type="datetime" />
+          <Property Name="Movement_History_Details" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_History_Details">
+          <Key>
+            <PropertyRef Name="ID_Movement_History_Details" />
+          </Key>
+          <Property Name="ID_Movement_History_Details" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Kod_Movement_History" Type="int" />
+          <Property Name="Kod_Modul_Name" Type="int" />
+          <Property Name="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" Type="nvarchar" MaxLength="255" />
+          <Property Name="Count_Modul" Type="int" />
+          <Property Name="Weight_Modul" Type="real" />
+          <Property Name="Kod_Way_To_Get_Weight" Type="nvarchar" MaxLength="255" />
+          <Property Name="Kod_Package" Type="int" />
+          <Property Name="Kod_Ed_Izmer" Type="int" />
+          <Property Name="Zavod_Invent_Number" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tbl_ORM">
+          <Key>
+            <PropertyRef Name="ID_ORM" />
+          </Key>
+          <Property Name="Short_Name_ORM" Type="nvarchar" MaxLength="100" />
+          <Property Name="Full_Name_ORM" Type="nvarchar" MaxLength="200" />
+          <Property Name="ID_ORM" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Kod_Zech_ORM" Type="int" />
+          <Property Name="Phone_ORM" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_Spiski">
+          <Key>
+            <PropertyRef Name="ID_Spiski" />
+          </Key>
+          <Property Name="ID_Spiski" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Spiski" Type="nvarchar" MaxLength="255" />
+          <Property Name="Value_Spiski" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBTTNModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="DBTTNEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Current_Movement" EntityType="DBTTNModel.tbl_Current_Movement" />
+          <EntitySet Name="tbl_Kadrovii_Sostav" EntityType="DBTTNModel.tbl_Kadrovii_Sostav" />
+          <EntitySet Name="tbl_Kadrovii_Sostav_par" EntityType="DBTTNModel.tbl_Kadrovii_Sostav_par" />
+          <EntitySet Name="tbl_Mestorojdenie" EntityType="DBTTNModel.tbl_Mestorojdenie" />
+          <EntitySet Name="tbl_Modul_Name" EntityType="DBTTNModel.tbl_Modul_Name" />
+          <EntitySet Name="tbl_Movement_History" EntityType="DBTTNModel.tbl_Movement_History" />
+          <EntitySet Name="tbl_Movement_History_Details" EntityType="DBTTNModel.tbl_Movement_History_Details" />
+          <EntitySet Name="tbl_ORM" EntityType="DBTTNModel.tbl_ORM" />
+          <EntitySet Name="tbl_Spiski" EntityType="DBTTNModel.tbl_Spiski" />
+        </EntityContainer>
+        <EntityType Name="tbl_Current_Movement">
+          <Key>
+            <PropertyRef Name="ID_Movement" />
+          </Key>
+          <Property Type="Int32" Name="ID_Movement" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Modul_Name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Zavod_Number" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Count" />
+          <Property Type="String" Name="Package" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Weight" />
+          <Property Type="String" Name="Way_To_Get_Weight" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ed_Izmer" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Kadrovii_Sostav">
+          <Key>
+            <PropertyRef Name="ID_KS" />
+          </Key>
+          <Property Type="String" Name="Tab_N_KS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Familiya_KS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Imya_KS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Otchestvo_KS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dolgnost_KS" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ID_KS" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Kod_ORM_KS" />
+          <Property Type="String" Name="Comment_KS" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Priority_Doljnost_KS" />
+        </EntityType>
+        <EntityType Name="tbl_Kadrovii_Sostav_par">
+          <Key>
+            <PropertyRef Name="ID_KS_Par" />
+          </Key>
+          <Property Type="Int32" Name="ID_KS_Par" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Kod_KS_Par" />
+          <Property Type="String" Name="Parametr_Name_KS_Par" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Parametr_Text_KS_Par" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Parametr_Comment_KS_Par" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Mestorojdenie">
+          <Key>
+            <PropertyRef Name="ID_Mestorij" />
+          </Key>
+          <Property Type="Int32" Name="ID_Mestorij" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name_Mestorojdenie" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Modul_Name">
+          <Key>
+            <PropertyRef Name="ID_Modul_Name" />
+          </Key>
+          <Property Type="Int32" Name="ID_Modul_Name" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Short_Name_Modul_Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Full_Name_Modul_Name" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Catalog_Nomer_Modul_Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Class_Modul_Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comment_Modul_Name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Weight_Modul_Name" />
+          <Property Type="String" Name="Way_To_Find_Weight" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Image_Path" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_History">
+          <Key>
+            <PropertyRef Name="ID_History" />
+          </Key>
+          <Property Type="Int32" Name="ID_History" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Movement_History_Number" />
+          <Property Type="Int32" Name="Kod_Sender_ORM" />
+          <Property Type="Int32" Name="Kod_Sender_Kadr_Sost" />
+          <Property Type="Int32" Name="Kod_Sender_Permision_Kadr_Sost" />
+          <Property Type="Int32" Name="Kod_Recever_ORM" />
+          <Property Type="Int32" Name="Kod_Recever_Request_Kadr_Sost" />
+          <Property Type="Int32" Name="Kod_Driver_Kadr_Sost" />
+          <Property Type="Int64" Name="Kod_Driver_Movement_List" />
+          <Property Type="DateTime" Name="Data_Movement_History" Precision="3" />
+          <Property Type="Int32" Name="Movement_History_Details" />
+        </EntityType>
+        <EntityType Name="tbl_Movement_History_Details">
+          <Key>
+            <PropertyRef Name="ID_Movement_History_Details" />
+          </Key>
+          <Property Type="Int32" Name="ID_Movement_History_Details" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Kod_Movement_History" />
+          <Property Type="Int32" Name="Kod_Modul_Name" />
+          <Property Type="String" Name="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Count_Modul" />
+          <Property Type="Single" Name="Weight_Modul" />
+          <Property Type="String" Name="Kod_Way_To_Get_Weight" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Kod_Package" />
+          <Property Type="Int32" Name="Kod_Ed_Izmer" />
+          <Property Type="String" Name="Zavod_Invent_Number" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_ORM">
+          <Key>
+            <PropertyRef Name="ID_ORM" />
+          </Key>
+          <Property Type="String" Name="Short_Name_ORM" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Full_Name_ORM" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ID_ORM" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Kod_Zech_ORM" />
+          <Property Type="String" Name="Phone_ORM" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Spiski">
+          <Key>
+            <PropertyRef Name="ID_Spiski" />
+          </Key>
+          <Property Type="Int32" Name="ID_Spiski" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name_Spiski" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value_Spiski" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DBTTNModelContainer" CdmEntityContainer="DBTTNEntities">
+          <EntitySetMapping Name="tbl_Current_Movement">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Current_Movement">
+              <MappingFragment StoreEntitySet="tbl_Current_Movement">
+                <ScalarProperty Name="Ed_Izmer" ColumnName="Ed_Izmer" />
+                <ScalarProperty Name="Way_To_Get_Weight" ColumnName="Way_To_Get_Weight" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Package" ColumnName="Package" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Zavod_Number" ColumnName="Zavod_Number" />
+                <ScalarProperty Name="Modul_Name" ColumnName="Modul_Name" />
+                <ScalarProperty Name="ID_Movement" ColumnName="ID_Movement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Kadrovii_Sostav">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Kadrovii_Sostav">
+              <MappingFragment StoreEntitySet="tbl_Kadrovii_Sostav">
+                <ScalarProperty Name="Priority_Doljnost_KS" ColumnName="Priority_Doljnost_KS" />
+                <ScalarProperty Name="Comment_KS" ColumnName="Comment_KS" />
+                <ScalarProperty Name="Kod_ORM_KS" ColumnName="Kod_ORM_KS" />
+                <ScalarProperty Name="ID_KS" ColumnName="ID_KS" />
+                <ScalarProperty Name="Dolgnost_KS" ColumnName="Dolgnost_KS" />
+                <ScalarProperty Name="Otchestvo_KS" ColumnName="Otchestvo_KS" />
+                <ScalarProperty Name="Imya_KS" ColumnName="Imya_KS" />
+                <ScalarProperty Name="Familiya_KS" ColumnName="Familiya_KS" />
+                <ScalarProperty Name="Tab_N_KS" ColumnName="Tab_N_KS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Kadrovii_Sostav_par">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Kadrovii_Sostav_par">
+              <MappingFragment StoreEntitySet="tbl_Kadrovii_Sostav_par">
+                <ScalarProperty Name="Parametr_Comment_KS_Par" ColumnName="Parametr_Comment_KS_Par" />
+                <ScalarProperty Name="Parametr_Text_KS_Par" ColumnName="Parametr_Text_KS_Par" />
+                <ScalarProperty Name="Parametr_Name_KS_Par" ColumnName="Parametr_Name_KS_Par" />
+                <ScalarProperty Name="Kod_KS_Par" ColumnName="Kod_KS_Par" />
+                <ScalarProperty Name="ID_KS_Par" ColumnName="ID_KS_Par" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Mestorojdenie">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Mestorojdenie">
+              <MappingFragment StoreEntitySet="tbl_Mestorojdenie">
+                <ScalarProperty Name="Name_Mestorojdenie" ColumnName="Name_Mestorojdenie" />
+                <ScalarProperty Name="ID_Mestorij" ColumnName="ID_Mestorij" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Modul_Name">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Modul_Name">
+              <MappingFragment StoreEntitySet="tbl_Modul_Name">
+                <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+                <ScalarProperty Name="Way_To_Find_Weight" ColumnName="Way_To_Find_Weight" />
+                <ScalarProperty Name="Weight_Modul_Name" ColumnName="Weight_Modul_Name" />
+                <ScalarProperty Name="Comment_Modul_Name" ColumnName="Comment_Modul_Name" />
+                <ScalarProperty Name="Class_Modul_Name" ColumnName="Class_Modul_Name" />
+                <ScalarProperty Name="Catalog_Nomer_Modul_Name" ColumnName="Catalog_Nomer_Modul_Name" />
+                <ScalarProperty Name="Full_Name_Modul_Name" ColumnName="Full_Name_Modul_Name" />
+                <ScalarProperty Name="Short_Name_Modul_Name" ColumnName="Short_Name_Modul_Name" />
+                <ScalarProperty Name="ID_Modul_Name" ColumnName="ID_Modul_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Movement_History">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Movement_History">
+              <MappingFragment StoreEntitySet="tbl_Movement_History">
+                <ScalarProperty Name="Movement_History_Details" ColumnName="Movement_History_Details" />
+                <ScalarProperty Name="Data_Movement_History" ColumnName="Data_Movement_History" />
+                <ScalarProperty Name="Kod_Driver_Movement_List" ColumnName="Kod_Driver_Movement_List" />
+                <ScalarProperty Name="Kod_Driver_Kadr_Sost" ColumnName="Kod_Driver_Kadr_Sost" />
+                <ScalarProperty Name="Kod_Recever_Request_Kadr_Sost" ColumnName="Kod_Recever_Request_Kadr_Sost" />
+                <ScalarProperty Name="Kod_Recever_ORM" ColumnName="Kod_Recever_ORM" />
+                <ScalarProperty Name="Kod_Sender_Permision_Kadr_Sost" ColumnName="Kod_Sender_Permision_Kadr_Sost" />
+                <ScalarProperty Name="Kod_Sender_Kadr_Sost" ColumnName="Kod_Sender_Kadr_Sost" />
+                <ScalarProperty Name="Kod_Sender_ORM" ColumnName="Kod_Sender_ORM" />
+                <ScalarProperty Name="Movement_History_Number" ColumnName="Movement_History_Number" />
+                <ScalarProperty Name="ID_History" ColumnName="ID_History" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Movement_History_Details">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Movement_History_Details">
+              <MappingFragment StoreEntitySet="tbl_Movement_History_Details">
+                <ScalarProperty Name="Zavod_Invent_Number" ColumnName="Zavod_Invent_Number" />
+                <ScalarProperty Name="Kod_Ed_Izmer" ColumnName="Kod_Ed_Izmer" />
+                <ScalarProperty Name="Kod_Package" ColumnName="Kod_Package" />
+                <ScalarProperty Name="Kod_Way_To_Get_Weight" ColumnName="Kod_Way_To_Get_Weight" />
+                <ScalarProperty Name="Weight_Modul" ColumnName="Weight_Modul" />
+                <ScalarProperty Name="Count_Modul" ColumnName="Count_Modul" />
+                <ScalarProperty Name="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" ColumnName="Modul_Name_IF_Definition_Not_Exist_In_Dictionary" />
+                <ScalarProperty Name="Kod_Modul_Name" ColumnName="Kod_Modul_Name" />
+                <ScalarProperty Name="Kod_Movement_History" ColumnName="Kod_Movement_History" />
+                <ScalarProperty Name="ID_Movement_History_Details" ColumnName="ID_Movement_History_Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ORM">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_ORM">
+              <MappingFragment StoreEntitySet="tbl_ORM">
+                <ScalarProperty Name="Phone_ORM" ColumnName="Phone_ORM" />
+                <ScalarProperty Name="Kod_Zech_ORM" ColumnName="Kod_Zech_ORM" />
+                <ScalarProperty Name="ID_ORM" ColumnName="ID_ORM" />
+                <ScalarProperty Name="Full_Name_ORM" ColumnName="Full_Name_ORM" />
+                <ScalarProperty Name="Short_Name_ORM" ColumnName="Short_Name_ORM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Spiski">
+            <EntityTypeMapping TypeName="DBTTNModel.tbl_Spiski">
+              <MappingFragment StoreEntitySet="tbl_Spiski">
+                <ScalarProperty Name="Value_Spiski" ColumnName="Value_Spiski" />
+                <ScalarProperty Name="Name_Spiski" ColumnName="Name_Spiski" />
+                <ScalarProperty Name="ID_Spiski" ColumnName="ID_Spiski" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>
